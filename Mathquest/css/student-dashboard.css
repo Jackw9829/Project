@@ -1,0 +1,81 @@
+.dashboard-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.error-message {
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.quiz-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.no-quizzes {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    grid-column: 1 / -1;
+    padding: 2rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+h1 {
+    margin-bottom: 2rem;
+    color: #333;
+    font-family: 'Tiny5', sans-serif;
+}
+
+.welcome-section {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.welcome-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.welcome-section p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Maintain the original button styles */
+.start-quiz-btn, .review-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 2px solid #333;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #333;
+    font-family: 'Tiny5';
+    font-size: 0.9rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.start-quiz-btn {
+    background: #dcffdc;
+}
+
+.review-btn {
+    background: #ffdcdc;
+}
+
+.start-quiz-btn:hover, .review-btn:hover {
+    background: #333;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}

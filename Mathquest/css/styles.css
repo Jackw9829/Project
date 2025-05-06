@@ -1,0 +1,473 @@
+/* Global styles for MathQuest */
+:root {
+    --primary-color: #ffdcdc;
+    --secondary-color: #d4e0ee;
+    --accent-color: #5352ed;
+    --text-color: #333;
+    --light-text: #666;
+    --border-color: #dcdde1;
+    --success-color: #2ecc71;
+    --warning-color: #f1c40f;
+    --error-color: #e74c3c;
+    --header-height: 80px;
+    --footer-height: 80px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Tiny5', sans-serif;
+    color: var(--text-color);
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--secondary-color);
+}
+
+main {
+    position: fixed;
+    top: var(--header-height);
+    bottom: var(--footer-height);
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+    background-color: var(--secondary-color);
+}
+
+.dashboard-container {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 20px 60px;
+    overflow-y: auto;
+    height: 100%;
+}
+
+/* Header Styles */
+header, .header {
+    background-color: var(--primary-color);
+    height: var(--header-height);
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo img {
+    height: 60px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--light-text);
+}
+
+.header-right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-btn {
+    background-color: transparent;
+    border: 1px solid var(--light-text);
+    margin-left: 10px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    background-color: var(--light-text);
+    color: var(--primary-color);
+}
+
+/* Dashboard Styles */
+.dashboard-header {
+    margin-bottom: 30px;
+}
+
+.dashboard-title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.dashboard-title {
+    font-size: 2.5em;
+    color: var(--text-color);
+}
+
+.quizzes-done {
+    font-size: 1.2em;
+    color: var(--text-color);
+    padding: 8px 16px;
+    background: var(--secondary-color);
+    border-radius: 4px;
+}
+
+.quiz-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.quiz-card {
+    background: var(--light-text);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quiz-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.quiz-info h3 {
+    font-size: 1.5em;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.teacher-name {
+    color: var(--text-color);
+    font-size: 0.9em;
+    margin-bottom: 8px;
+}
+
+.quiz-description {
+    color: var(--text-color);
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+.quiz-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.action-btn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 1em;
+    text-align: center;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.action-btn.attempt {
+    background: var(--success-color);
+    color: var(--light-text);
+}
+
+.action-btn.view {
+    background: var(--accent-color);
+    color: var(--light-text);
+}
+
+.action-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.no-quizzes {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1.2em;
+    grid-column: 1 / -1;
+    padding: 40px;
+}
+
+.error-message {
+    color: var(--error-color);
+    text-align: center;
+    padding: 20px;
+    background: var(--secondary-color);
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+/* About Page Styles */
+.feature-card {
+    background: var(--light-text);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.feature-card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.feature-card ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.feature-card ul li:before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+.contact-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Content Styles */
+.content-section {
+    margin-bottom: 40px;
+}
+
+.content-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.content-section p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.content-section ul {
+    list-style-type: none;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.content-section ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.content-section ul li:before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+}
+
+.modal-content {
+    background: var(--light-text);
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.confirm-btn, .cancel-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.confirm-btn {
+    background: var(--success-color);
+    color: var(--light-text);
+}
+
+.cancel-btn {
+    background: var(--error-color);
+    color: var(--light-text);
+}
+
+.confirm-btn:hover, .cancel-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* Fixed Footer */
+footer {
+    background-color: var(--primary-color);
+    height: var(--footer-height);
+    padding: 0 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--light-text);
+}
+
+.footer-left {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.footer-left p {
+    font-size: 18px;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer-link {
+    color: var(--light-text);
+    transition: color 0.3s ease;
+    font-size: 20px;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.footer-links a {
+    color: var(--light-text);
+    transition: color 0.3s ease;
+    font-size: 20px;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-left: 20px;
+}
+
+.footer-link:hover,
+.footer-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header, .header {
+        height: auto;
+        min-height: var(--header-height);
+        padding: 10px 20px;
+        flex-direction: column;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
+    .logo-text {
+        font-size: 24px;
+    }
+
+    .header-right {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .nav-btn {
+        font-size: 18px;
+        width: 100%;
+        text-align: center;
+    }
+
+    main {
+        padding: 120px 10px 90px 10px;
+    }
+
+    footer {
+        height: auto;
+        min-height: var(--footer-height);
+        padding: 10px 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left {
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-right {
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    .footer-links a {
+        margin: 0 10px;
+        font-size: 18px;
+    }
+}
