@@ -28,8 +28,8 @@ function getGoogleCredentials() {
     // In a production environment, these should be stored securely
     // such as in environment variables or a secure configuration file
     $credentials = [
-        // 'client_id' => '321895690303-2kshrntvv19v135cs551bd9bpff6cu04.apps.googleusercontent.com',
-        // 'client_secret' => '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'
+        // 'client_id' => 'GOOGLE_CLIENT_ID',
+        // 'client_secret' => 'GOOGLE_CLIENT_SECRET'
     ];
     
     return $credentials;
